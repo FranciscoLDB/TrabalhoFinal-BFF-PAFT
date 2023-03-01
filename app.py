@@ -7,6 +7,21 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/github')
+def github():
+    usuario = request.args.get('usuario')
+    respGit = requests.get('https://api.github.com/users/' + usuario)
+    jsonGit = respGit.json()
+
+    resp = {
+        'nome': jsonGit.get('name'),
+        'usuario': jsonGit.get('login'),
+        'bio': jsonGit.get('bio'),
+        'local': jsonGit.get('location'),
+        'foto': jsonGit.get('avatar_url'),
+    }
+    return resp
+
 @app.route('/pokemon')
 def pokemon():
     name = request.args.get('name')
