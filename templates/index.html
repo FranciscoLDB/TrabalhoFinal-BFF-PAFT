@@ -36,22 +36,49 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-12">
                 <h2>Filmes</h2>
-                <div class="card text-dark mb-3 p-3" style="max-width: 540px;">
-                    <img src="./static/icon_img.svg" class="card-img-top" id="foto_filme">
-                    <div class="card-body">
-                        <h5 class="card-title" id="nome_filme">Card title</h5>
+                <div class="card text-dark mb-3 p-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./static/icon_img.svg" class="card-img-top" id="foto_filme">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body" id="card_git">
+                                <h2 class="card-title" id="nome_filme">Card title</h2>
                         <p class="card-text">Nota: <span id="nota_filme"></span></p>
                         <p class="card-text">Data: <span id="data_filme"></span></p>
+                            </div>
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="text" class="form-control" id="input_filme" placeholder="Usuario">
+                            <button class="btn btn-dark" onclick="buscarFilme()">Buscar</button>
+                        </div>
                     </div>
-                    <div class="input-group mt-2">
-                        <input type="text" class="form-control" id="input_filme" placeholder="Usuario">
-                        <button class="btn btn-dark" onclick="buscarFilme()">Buscar</button>
-                    </div>
+                    <div class="row m-0 text-center">
+                        <div class="card card-similar col m-3">
+                            <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_1">
+                            <div class="card-body">
+                              <h5 class="card-title" id="nome_similar_1">Card title</h5>
+                            </div>
+                        </div>                   
+                        <div class="card card-similar col m-3">
+                            <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_2">
+                            <div class="card-body">
+                              <h5 class="card-title" id="nome_similar_2">Card title</h5>
+                            </div>
+                        </div>                   
+                        <div class="card card-similar col m-3">
+                            <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_3">
+                            <div class="card-body">
+                              <h5 class="card-title" id="nome_similar_3">Card title</h5>
+                            </div>
+                        </div> 
+                    </div>           
                 </div>
             </div>
         </section>
+        
     </main>
 </body>
 </html>

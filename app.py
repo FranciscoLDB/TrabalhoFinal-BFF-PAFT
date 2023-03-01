@@ -27,15 +27,32 @@ def github():
 def searchfilme():
     filme = request.args.get('filme')
     urlSearch = 'https://api.themoviedb.org/3/search/movie?api_key=a52d564a84702ae0175b97bb00f173af&query=' + filme
-
     respSearch = requests.get(urlSearch)
     jsonSearch = respSearch.json()
-    urlImg = jsonSearch.get('results')[0].get('poster_path')
+    
+    urlSimilar = 'https://api.themoviedb.org/3/movie/' + str(jsonSearch.get('results')[0].get('id')) + '/similar?api_key=a52d564a84702ae0175b97bb00f173af&language=en-US&page=1'
+    respSimilar = requests.get(urlSimilar)
+    jsonSimilar = respSimilar.json()
+
     resp = {
         'titulo': jsonSearch.get('results')[0].get('original_title'),
         'data': jsonSearch.get('results')[0].get('release_date'),
-        'foto': 'https://image.tmdb.org/t/p/w500' + urlImg,
+        'foto': 'https://image.tmdb.org/t/p/w500' + jsonSearch.get('results')[0].get('poster_path'),
         'nota': jsonSearch.get('results')[0].get('vote_average'),
+        'similar': [
+            {
+                'titulo': jsonSimilar.get('results')[0].get('original_title'),
+                'foto': 'https://image.tmdb.org/t/p/w500' + jsonSimilar.get('results')[0].get('poster_path'),
+            },
+            {
+                'titulo': jsonSimilar.get('results')[1].get('original_title'),
+                'foto': 'https://image.tmdb.org/t/p/w500' + jsonSimilar.get('results')[1].get('poster_path'),
+            },
+            {
+                'titulo': jsonSimilar.get('results')[2].get('original_title'),
+                'foto': 'https://image.tmdb.org/t/p/w500' + jsonSimilar.get('results')[2].get('poster_path'),
+            },
+        ]
     }
     return resp
 
