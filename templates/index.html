@@ -11,28 +11,43 @@
     <title>Trabalho Final BFF</title>
 </head>
 <body class="bg-dark text-white">
-    <h1>Hello World!</h1>
-    <main class="container">
+    <main class="container mt-4">
         <section class="row">
-            <div class="col text-dark">
-                <div class="card mb-3 p-3" style="max-width: 540px;">
+            <div class="col">
+                <h2>API Github</h2>
+                <div class="card text-dark mb-3 p-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start">
+                            <img src="./static/icon_img.svg" class="img-fluid rounded-start" id="foto_git">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
-                                <h4 class="card-title">Nome</h4>
-                                <p class="card-text">Usuario: </p>
-                                <p class="card-text">Bio: </p>
-                                <p class="card-text">Location: </p>
+                            <div class="card-body" id="card_git">
+                                <h4 class="card-title" id="nome_git">Nome</h4>
+                                <p class="card-text" id="usuario_git">Usuario: </p>
+                                <p class="card-text" id="bio_git">Bio: </p>
+                                <p class="card-text" id="location_git">Location: </p>
                             </div>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group mt-2">
                             <span class="input-group-text">@</span>
                             <input type="text" class="form-control" id="input_git" placeholder="Usuario">
                             <button class="btn btn-dark" type="button" id="btn_git" onclick="buscarGit()">Buscar</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Filmes</h2>
+                <div class="card text-dark mb-3 p-3" style="max-width: 540px;">
+                    <img src="./static/icon_img.svg" class="card-img-top" id="foto_filme">
+                    <div class="card-body">
+                        <h5 class="card-title" id="nome_filme">Card title</h5>
+                        <p class="card-text">Nota: <span id="nota_filme"></span></p>
+                        <p class="card-text">Data: <span id="data_filme"></span></p>
+                    </div>
+                    <div class="input-group mt-2">
+                        <input type="text" class="form-control" id="input_filme" placeholder="Usuario">
+                        <button class="btn btn-dark" onclick="buscarFilme()">Buscar</button>
                     </div>
                 </div>
             </div>

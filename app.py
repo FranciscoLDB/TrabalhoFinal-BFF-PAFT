@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import requests
 
 app = Flask(__name__)
+apiKey = 'a52d564a84702ae0175b97bb00f173af';
 
 @app.route('/')
 def index():
@@ -22,25 +23,20 @@ def github():
     }
     return resp
 
-@app.route('/pokemon')
-def pokemon():
-    name = request.args.get('name')
+@app.route('/searchfilme')
+def searchfilme():
+    filme = request.args.get('filme')
+    urlSearch = 'https://api.themoviedb.org/3/search/movie?api_key=a52d564a84702ae0175b97bb00f173af&query=' + filme
 
-    reskPoke = requests.get('https://pokeapi.co/api/v2/pokemon/' + name)
-    jsonPoke = reskPoke.json()
-
-    respItunes = requests.get(
-        'https://itunes.apple.com/search', 
-        params = {"term": name,"limit": 1,"entity": "movie"}
-    )
-    jsonMovie = respItunes.json()
-    
+    respSearch = requests.get(urlSearch)
+    jsonSearch = respSearch.json()
+    urlImg = jsonSearch.get('results')[0].get('poster_path')
     resp = {
-        'Pokemon': name,
-        'type': jsonPoke['types'][0].get('type').get('name'),
-        'movie': jsonMovie['results'][0].get('trackName')
-        }
+        'titulo': jsonSearch.get('results')[0].get('original_title'),
+        'data': jsonSearch.get('results')[0].get('release_date'),
+        'foto': 'https://image.tmdb.org/t/p/w500' + urlImg,
+        'nota': jsonSearch.get('results')[0].get('vote_average'),
+    }
     return resp
-
 
 app.run(debug=True)
