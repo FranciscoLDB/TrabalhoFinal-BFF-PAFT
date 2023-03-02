@@ -11,6 +11,7 @@ main{
 }
 
 #card_git > p{
-    font-size: 28px;
+    font-size: 20px;
+    margin-bottom: 8px;
     text-align: justify;
 }
