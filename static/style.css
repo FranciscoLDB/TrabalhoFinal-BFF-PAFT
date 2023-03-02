@@ -5,3 +5,12 @@
 main{
     display: grid;    
 }
+
+#card_git{
+    height: 100%;
+}
+
+#card_git > p{
+    font-size: 28px;
+    text-align: justify;
+}

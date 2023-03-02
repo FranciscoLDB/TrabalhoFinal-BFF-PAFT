@@ -39,6 +39,7 @@ def searchfilme():
         'data': jsonSearch.get('results')[0].get('release_date'),
         'foto': 'https://image.tmdb.org/t/p/w500' + jsonSearch.get('results')[0].get('poster_path'),
         'nota': jsonSearch.get('results')[0].get('vote_average'),
+        'descricao': jsonSearch.get('results')[0].get('overview'),
         'similar': [
             {
                 'titulo': jsonSimilar.get('results')[0].get('original_title'),

@@ -13,9 +13,9 @@
 <body class="bg-dark text-white">
     <main class="container mt-4">
         <section class="row">
-            <div class="col">
-                <h2>API Github</h2>
-                <div class="card text-dark mb-3 p-3" style="max-width: 540px;">
+            <div class="col-6">
+                <h2>1 - API Github</h2>
+                <div class="card text-dark mb-3 p-3">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="./static/icon_img.svg" class="img-fluid rounded-start" id="foto_git">
@@ -36,8 +36,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                <h2>Filmes</h2>
+            <div class="col-9">
+                <h2>2 - Filmes</h2>
                 <div class="card text-dark mb-3 p-3">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -45,9 +45,10 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body" id="card_git">
-                                <h2 class="card-title" id="nome_filme">Card title</h2>
-                        <p class="card-text">Nota: <span id="nota_filme"></span></p>
-                        <p class="card-text">Data: <span id="data_filme"></span></p>
+                                <h1 class="card-title text-center" id="nome_filme">Card title</h1>
+                                <p class="card-text" id="descricao_filme">Descrição:</p>
+                                <p class="card-text">Nota: <span id="nota_filme"></span></p>
+                                <p class="card-text">Lançamento: <span id="data_filme"></span></p>
                             </div>
                         </div>
                         <div class="input-group mt-2">
@@ -55,20 +56,22 @@
                             <button class="btn btn-dark" onclick="buscarFilme()">Buscar</button>
                         </div>
                     </div>
+                    <hr>
                     <div class="row m-0 text-center">
-                        <div class="card card-similar col m-3">
+                        <h2 class="mt-2">Filmes Similares</h2>
+                        <div class="card card-similar col m-3 p-0">
                             <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_1">
                             <div class="card-body">
                               <h5 class="card-title" id="nome_similar_1">Card title</h5>
                             </div>
                         </div>                   
-                        <div class="card card-similar col m-3">
+                        <div class="card card-similar col m-3 p-0">
                             <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_2">
                             <div class="card-body">
                               <h5 class="card-title" id="nome_similar_2">Card title</h5>
                             </div>
                         </div>                   
-                        <div class="card card-similar col m-3">
+                        <div class="card card-similar col m-3 p-0">
                             <img src="./static/icon_img.svg" class="card-img-top" id="foto_similar_3">
                             <div class="card-body">
                               <h5 class="card-title" id="nome_similar_3">Card title</h5>
@@ -76,6 +79,10 @@
                         </div> 
                     </div>           
                 </div>
+            </div>
+            <div class="col-9">
+                <h2>3 - Github - jinja</h2>
+                
             </div>
         </section>
         

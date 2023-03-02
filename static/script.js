@@ -26,6 +26,7 @@ function buscarFilme(){
             document.getElementById('nome_filme').innerText = data.titulo;
             document.getElementById('data_filme').innerText = data.data;
             document.getElementById('nota_filme').innerText = data.nota;
+            document.getElementById('descricao_filme').innerText = data.descricao;
             document.getElementById('foto_similar_1').setAttribute('src', data.similar[0].foto);
             document.getElementById('nome_similar_1').innerText = data.similar[0].titulo;
             document.getElementById('foto_similar_2').setAttribute('src', data.similar[1].foto);
